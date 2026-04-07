@@ -1,0 +1,544 @@
+/* ============================================================
+   CSS VARIABLES — Change these to re-theme the entire site!
+   ============================================================ */
+:root {
+  /* Colors — clean, minimal light palette */
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-primary: #555555;
+  --color-primary-hover: #222222;
+  --color-accent: #333333;
+  --color-text: #666666;
+  --color-text-muted: #aaaaaa;
+  --color-heading: #1a1a1a;
+  --color-border: #e8e8e8;
+
+  /* Fonts */
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 7rem;
+
+  /* Sizing */
+  --max-width: 860px;
+  --nav-height: 60px;
+  --border-radius: 6px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Reusable container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-heading);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+.nav-logo:hover {
+  color: var(--color-heading);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: var(--spacing-xs) 0;
+  transition: color var(--transition-normal);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-heading);
+}
+
+/* No underline effect — keep it minimal */
+.nav-links a::after {
+  display: none;
+}
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.hero-content {
+  max-width: 560px;
+}
+
+.hero-greeting {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: 1.15;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-headline {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 400;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+/* Ghost / outline button */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.8rem;
+  border-radius: var(--border-radius);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-border);
+}
+
+.btn-primary:hover {
+  color: var(--color-heading);
+  border-color: var(--color-text-muted);
+}
+
+/* ============================================================
+   SECTIONS (shared)
+   ============================================================ */
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* No alternate background — consistent clean look */
+.section-alt {
+  background-color: transparent;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Fade-in animation — applied by JS via IntersectionObserver */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+.image-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--color-text-muted);
+}
+
+.about-text p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+/* ============================================================
+   EXPERIENCE (Timeline)
+   ============================================================ */
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: var(--spacing-md);
+}
+
+/* Thin vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-lg);
+  padding-left: var(--spacing-md);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Small dot */
+.timeline-dot {
+  position: absolute;
+  left: calc(-1 * var(--spacing-md));
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-text-muted);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-heading);
+  margin: 0.35rem 0 0.2rem;
+}
+
+.timeline-company {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.timeline-content > p:last-child {
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.skill-tag {
+  background-color: transparent;
+  color: var(--color-text);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  font-weight: 400;
+  border: 1px solid var(--color-border);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-tag:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-heading);
+}
+
+/* ============================================================
+   EDUCATION
+   ============================================================ */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.education-card {
+  padding: var(--spacing-md);
+  text-align: left;
+}
+
+.education-card:hover {
+  /* No hover effect — keep it clean */
+}
+
+.education-icon {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.education-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-heading);
+  margin-bottom: 0.25rem;
+}
+
+.education-school {
+  color: var(--color-text);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.education-year {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.education-card > p:last-child {
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   FOOTER / CONTACT
+   ============================================================ */
+.footer {
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-text {
+  color: var(--color-text);
+  max-width: 420px;
+  margin: 0 auto var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.social-link {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.social-link:hover {
+  color: var(--color-heading);
+}
+
+.footer-copy {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .image-placeholder {
+    width: 140px;
+    height: 140px;
+    font-size: 2.5rem;
+  }
+
+  /* Show hamburger, hide horizontal links */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    padding: var(--spacing-sm) 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.6rem var(--spacing-md);
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Small mobile (480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 1.8rem;
+  }
+
+  .hero-headline {
+    font-size: 0.9rem;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name Here — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">YN</a>
+
+      <!-- Hamburger button (mobile) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Nav links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO SECTION ======================== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Your Name Here</h1>
+      <p class="hero-headline">Your headline goes here — e.g. Frontend Developer & Designer</p>
+      <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT SECTION ======================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <!-- Profile image placeholder -->
+        <div class="about-image">
+          <div class="image-placeholder">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+        <!-- Bio text -->
+        <div class="about-text">
+          <p>
+            Describe your experience and background here. Who are you? What do
+            you do? What are you passionate about? Write 2–3 short paragraphs
+            that give visitors a sense of who you are.
+          </p>
+          <p>
+            This is a great place to mention your journey into tech, your
+            interests outside of work, or what drives you as a professional.
+            Keep it personal and authentic.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EXPERIENCE SECTION ======================== -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+
+        <!-- Experience item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 — Present</span>
+            <h3>Job Title Here</h3>
+            <p class="timeline-company">Company Name</p>
+            <p>Briefly describe what you did in this role. Mention key responsibilities, projects, or achievements.</p>
+          </div>
+        </div>
+
+        <!-- Experience item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022 — 2024</span>
+            <h3>Previous Job Title</h3>
+            <p class="timeline-company">Previous Company</p>
+            <p>Describe your experience here. What did you learn? What impact did you make?</p>
+          </div>
+        </div>
+
+        <!-- Experience item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2020 — 2022</span>
+            <h3>Another Job Title</h3>
+            <p class="timeline-company">Another Company</p>
+            <p>Add more roles as needed. Copy this block and update the content.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SKILLS SECTION ======================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Responsive Design</span>
+        <span class="skill-tag">Your Skill Here</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== EDUCATION SECTION ======================== -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="education-grid">
+
+        <!-- Education item 1 -->
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3>Degree or Certification</h3>
+          <p class="education-school">University / Institution Name</p>
+          <p class="education-year">2018 — 2022</p>
+          <p>Brief description of what you studied or any relevant details.</p>
+        </div>
+
+        <!-- Education item 2 -->
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3>Another Degree or Course</h3>
+          <p class="education-school">Another Institution</p>
+          <p class="education-year">2022</p>
+          <p>Add courses, bootcamps, or certifications here.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT / FOOTER ======================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="footer-text">
+        Interested in working together? Feel free to reach out through any of
+        the links below.
+      </p>
+
+      <!-- Social links -->
+      <div class="social-links">
+        <a href="mailto:your@email.com" class="social-link" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/yourprofile" target="_blank" class="social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+
+      <p class="footer-copy">&copy; 2026 Your Name Here. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="index.js"></script>
+</body>
+</html>
