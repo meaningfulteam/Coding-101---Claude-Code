@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name Here — Portfolio</title>
+  <title>Juan Manuel Méndez — Portfolio</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,101 +18,193 @@
 </head>
 <body>
 
+  <!-- Bouncing geometric shapes layer -->
+  <div class="geo-canvas" id="geo-canvas" aria-hidden="true"></div>
+
   <!-- ======================== NAVIGATION ======================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">YN</a>
+      <a href="#hero" class="nav-logo">jm.</a>
 
-      <!-- Hamburger button (mobile) -->
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <!-- Nav links -->
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#experience">Experiencia</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#education">Educación</a></li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ======================== HERO SECTION ======================== -->
+  <!-- ======================== HERO ======================== -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <p class="hero-greeting">Hello, I'm</p>
-      <h1 class="hero-name">Your Name Here</h1>
-      <p class="hero-headline">Your headline goes here — e.g. Frontend Developer & Designer</p>
-      <a href="#contact" class="btn btn-primary">Get in Touch</a>
+      <p class="hero-greeting">Hola, soy</p>
+      <h1 class="hero-name">Juan Manuel<br>Méndez</h1>
+      <p class="hero-headline" id="hero-headline"></p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Conectar</a>
+        <a href="#experience" class="btn btn-ghost">Ver experiencia</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <i class="fa-solid fa-arrow-down"></i>
     </div>
   </section>
 
-  <!-- ======================== ABOUT SECTION ======================== -->
+  <!-- ======================== ABOUT ======================== -->
   <section class="section" id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title"><span class="accent-num">01.</span> Sobre mí</h2>
       <div class="about-grid">
-        <!-- Profile image placeholder -->
-        <div class="about-image">
-          <div class="image-placeholder">
-            <i class="fa-solid fa-user"></i>
+
+        <div class="about-sidebar">
+          <div class="avatar-wrapper">
+            <img
+              src="https://media.licdn.com/dms/image/v2/C4E03AQH4p4vdbzCkow/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1650858584285?e=1777507200&v=beta&t=b439mmbiSMQv7j_bG7ZBEZ3-Q-X2nem_0P_gj3-QJVo"
+              alt="Juan Manuel Méndez"
+              class="avatar-img"
+              onerror="this.style.display='none'; document.querySelector('.avatar-fallback').style.display='flex';"
+            >
+            <div class="avatar-fallback">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="avatar-ring"></div>
+          </div>
+          <div class="about-meta">
+            <div class="meta-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Ciudad de México, México</span>
+            </div>
+            <div class="meta-item">
+              <i class="fa-solid fa-globe"></i>
+              <a href="https://www.juanmendez.dev" target="_blank">juanmendez.dev</a>
+            </div>
+            <div class="meta-item">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <a href="https://www.linkedin.com/in/juan-manuel-m%C3%A9ndez-mouledous/" target="_blank">LinkedIn</a>
+            </div>
           </div>
         </div>
-        <!-- Bio text -->
+
         <div class="about-text">
           <p>
-            Describe your experience and background here. Who are you? What do
-            you do? What are you passionate about? Write 2–3 short paragraphs
-            that give visitors a sense of who you are.
+            Ingeniero mecánico egresado de la <strong>Universidad Simón Bolívar</strong>, reconvertido
+            en desarrollador web y producto digital. Hoy trabajo como
+            <strong>Web &amp; Growth Developer</strong> en Meaningful y estoy construyendo
+            <strong>Supervisible.com</strong>, una plataforma de gestión de recursos para agencias.
           </p>
           <p>
-            This is a great place to mention your journey into tech, your
-            interests outside of work, or what drives you as a professional.
-            Keep it personal and authentic.
+            Mi trayectoria combina la precisión de la ingeniería con la creatividad del desarrollo web.
+            Especializado en <strong>Webflow, Next.js y JavaScript</strong>, con foco en Growth:
+            Google Tag Manager, PostHog y analítica avanzada.
           </p>
+          <p>
+            Fui presidente de la Federación de Centros de Estudiantes de la USB —esa experiencia
+            me enseñó a liderar equipos bajo presión y a tomar decisiones con criterio. Lo aplico
+            todos los días en producto.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">años en web dev</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">470</span>
+              <span class="stat-label">conexiones</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">9</span>
+              <span class="stat-label">certificaciones</span>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ======================== EXPERIENCE SECTION ======================== -->
+  <!-- ======================== EXPERIENCE ======================== -->
   <section class="section section-alt" id="experience">
     <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <div class="timeline">
+      <h2 class="section-title"><span class="accent-num">02.</span> Experiencia</h2>
+      <div class="exp-grid">
 
-        <!-- Experience item 1 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2024 — Present</span>
-            <h3>Job Title Here</h3>
-            <p class="timeline-company">Company Name</p>
-            <p>Briefly describe what you did in this role. Mention key responsibilities, projects, or achievements.</p>
+        <div class="exp-card featured">
+          <div class="exp-card-header">
+            <span class="exp-badge">Actual</span>
+            <span class="exp-date">Nov 2023 — Presente</span>
+          </div>
+          <h3>Web &amp; Growth Developer</h3>
+          <p class="exp-company">Meaningful | Growth Marketing &nbsp;·&nbsp; Remoto</p>
+          <p class="exp-desc">Desarrollo web (Front End) y análisis de datos para una agencia de Growth Marketing líder en Latinoamérica. Implementación de soluciones con Webflow, GTM y herramientas de analítica avanzada.</p>
+          <div class="exp-tags">
+            <span>Webflow</span><span>Google Tag Manager</span><span>PostHog</span><span>Framer</span>
           </div>
         </div>
 
-        <!-- Experience item 2 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2022 — 2024</span>
-            <h3>Previous Job Title</h3>
-            <p class="timeline-company">Previous Company</p>
-            <p>Describe your experience here. What did you learn? What impact did you make?</p>
+        <div class="exp-card">
+          <div class="exp-card-header">
+            <span class="exp-date">Sept 2024 — Sept 2025</span>
+          </div>
+          <h3>Product Engineer</h3>
+          <p class="exp-company">Supervisible &nbsp;·&nbsp; Remoto</p>
+          <p class="exp-desc">Construcción desde cero de una plataforma de gestión de recursos y capacidad para agencias. Arquitectura y desarrollo full-stack con Next.js.</p>
+          <div class="exp-tags">
+            <span>Next.js</span><span>Framer</span><span>TypeScript</span>
           </div>
         </div>
 
-        <!-- Experience item 3 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2020 — 2022</span>
-            <h3>Another Job Title</h3>
-            <p class="timeline-company">Another Company</p>
-            <p>Add more roles as needed. Copy this block and update the content.</p>
+        <div class="exp-card">
+          <div class="exp-card-header">
+            <span class="exp-date">Ene 2022 — Nov 2023</span>
+          </div>
+          <h3>Webflow Developer Sr.</h3>
+          <p class="exp-company">Meaningful | Growth Marketing &nbsp;·&nbsp; Remoto</p>
+          <p class="exp-desc">Desarrollo avanzado de sitios en Webflow con JavaScript personalizado, integraciones de terceros y optimización de performance y SEO.</p>
+          <div class="exp-tags">
+            <span>Webflow</span><span>JavaScript</span><span>CSS</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-card-header">
+            <span class="exp-date">Sept 2022 — Nov 2022</span>
+          </div>
+          <h3>Product Manager</h3>
+          <p class="exp-company">Tiny Rockets</p>
+          <p class="exp-desc">Gestión del relanzamiento de una aplicación de seguimiento de hábitos. Coordinación de equipo técnico y definición de roadmap de producto.</p>
+          <div class="exp-tags">
+            <span>Firebase</span><span>Gestión de proyectos</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-card-header">
+            <span class="exp-date">Jun 2021 — Ene 2022</span>
+          </div>
+          <h3>Webflow Developer</h3>
+          <p class="exp-company">Tiny Rockets</p>
+          <p class="exp-desc">Desarrollo de sitios web en Webflow. Implementación de GTM y scripts personalizados de JavaScript para tracking avanzado.</p>
+          <div class="exp-tags">
+            <span>Webflow</span><span>HTML</span><span>JavaScript</span><span>GTM</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-card-header">
+            <span class="exp-date">Dic 2020 — Jun 2021</span>
+          </div>
+          <h3>Pasante de Ingeniería Mecánica</h3>
+          <p class="exp-company">Galletas Puig &nbsp;·&nbsp; Caracas, Venezuela</p>
+          <p class="exp-desc">Rehabilitación del sistema de aire comprimido para C.A. Sucesora de José Puig y Cía. Proyecto con distinción de <strong>Mención Sobresaliente</strong> en la USB.</p>
+          <div class="exp-tags">
+            <span>Ingeniería mecánica</span><span>Diseño</span><span>CAD</span>
           </div>
         </div>
 
@@ -120,53 +212,106 @@
     </div>
   </section>
 
-  <!-- ======================== SKILLS SECTION ======================== -->
+  <!-- ======================== SKILLS ======================== -->
   <section class="section" id="skills">
     <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <span class="skill-tag">HTML</span>
-        <span class="skill-tag">CSS</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">React</span>
-        <span class="skill-tag">Node.js</span>
-        <span class="skill-tag">Git</span>
-        <span class="skill-tag">Figma</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">REST APIs</span>
-        <span class="skill-tag">Responsive Design</span>
-        <span class="skill-tag">Your Skill Here</span>
+      <h2 class="section-title"><span class="accent-num">03.</span> Skills</h2>
+      <div class="skills-container">
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-code"></i> Desarrollo Web</h3>
+          <div class="skill-pills">
+            <span class="pill">Webflow</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Next.js</span>
+            <span class="pill">React</span>
+            <span class="pill">Framer</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-chart-line"></i> Growth &amp; Analytics</h3>
+          <div class="skill-pills">
+            <span class="pill">Google Tag Manager</span>
+            <span class="pill">PostHog</span>
+            <span class="pill">Google Analytics</span>
+            <span class="pill">SEO</span>
+            <span class="pill">A/B Testing</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-layer-group"></i> Producto &amp; Diseño</h3>
+          <div class="skill-pills">
+            <span class="pill">Product Management</span>
+            <span class="pill">UX Design</span>
+            <span class="pill">Firebase</span>
+            <span class="pill">Figma</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fa-solid fa-users"></i> Liderazgo</h3>
+          <div class="skill-pills">
+            <span class="pill">Gestión de equipos</span>
+            <span class="pill">Negociación</span>
+            <span class="pill">Oratoria</span>
+            <span class="pill">Team Building</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ======================== EDUCATION SECTION ======================== -->
+  <!-- ======================== EDUCATION ======================== -->
   <section class="section section-alt" id="education">
     <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="education-grid">
+      <h2 class="section-title"><span class="accent-num">04.</span> Educación</h2>
+      <div class="edu-list">
 
-        <!-- Education item 1 -->
-        <div class="education-card">
-          <div class="education-icon">
+        <div class="edu-item">
+          <div class="edu-icon-wrap">
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
-          <h3>Degree or Certification</h3>
-          <p class="education-school">University / Institution Name</p>
-          <p class="education-year">2018 — 2022</p>
-          <p>Brief description of what you studied or any relevant details.</p>
+          <div class="edu-content">
+            <div class="edu-header">
+              <h3>Ingeniería Mecánica</h3>
+              <span class="edu-year">2014 — 2022</span>
+            </div>
+            <p class="edu-school">Universidad Simón Bolívar</p>
+            <p class="edu-detail">Proyecto de grado con <strong>Mención Sobresaliente</strong> (máxima distinción). Presidente de la Federación de Centros de Estudiantes (FCEUSB) y del Centro de Estudiantes de Ingeniería Mecánica. Preparador académico de Física y coordinador del movimiento estudiantil DEMOS.</p>
+          </div>
         </div>
 
-        <!-- Education item 2 -->
-        <div class="education-card">
-          <div class="education-icon">
+        <div class="edu-item">
+          <div class="edu-icon-wrap">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="edu-content">
+            <div class="edu-header">
+              <h3>Diplomatura LIDERA</h3>
+              <span class="edu-year">2018 — 2019</span>
+            </div>
+            <p class="edu-school">IESA — Instituto de Estudios Superiores de Administración</p>
+            <p class="edu-detail">Programa de formación en liderazgo político, empresarial y social. Egresado de la 10.ª cohorte. Avalado por UCAB, UNIMET, IESA y Fundación Futuro Presente. Módulos de oratoria, negociación, ética y debate.</p>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-icon-wrap">
             <i class="fa-solid fa-certificate"></i>
           </div>
-          <h3>Another Degree or Course</h3>
-          <p class="education-school">Another Institution</p>
-          <p class="education-year">2022</p>
-          <p>Add courses, bootcamps, or certifications here.</p>
+          <div class="edu-content">
+            <div class="edu-header">
+              <h3>Webflow Certifications</h3>
+              <span class="edu-year">Nov 2021</span>
+            </div>
+            <p class="edu-school">Webflow</p>
+            <p class="edu-detail">Webflow Experts Certification y Webflow Layout Level 2. Parte de un total de <strong>9 certificaciones profesionales</strong> que incluyen herramientas de marketing y desarrollo web.</p>
+          </div>
         </div>
 
       </div>
@@ -176,26 +321,23 @@
   <!-- ======================== CONTACT / FOOTER ======================== -->
   <footer class="footer" id="contact">
     <div class="container">
-      <h2 class="section-title">Let's Connect</h2>
-      <p class="footer-text">
-        Interested in working together? Feel free to reach out through any of
-        the links below.
-      </p>
-
-      <!-- Social links -->
-      <div class="social-links">
-        <a href="mailto:your@email.com" class="social-link" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="https://github.com/yourprofile" target="_blank" class="social-link" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
+      <div class="contact-inner">
+        <h2 class="contact-title">Hablemos.</h2>
+        <p class="contact-sub">
+          ¿Tienes un proyecto, una idea o simplemente quieres conectar?<br>Estoy disponible.
+        </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/juan-manuel-m%C3%A9ndez-mouledous/" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://www.juanmendez.dev" target="_blank" class="social-link" aria-label="Website">
+            <i class="fa-solid fa-globe"></i>
+            <span>juanmendez.dev</span>
+          </a>
+        </div>
       </div>
-
-      <p class="footer-copy">&copy; 2026 Your Name Here. All rights reserved.</p>
+      <p class="footer-copy">&copy; 2026 Juan Manuel Méndez Mouledous · Ciudad de México</p>
     </div>
   </footer>
 
